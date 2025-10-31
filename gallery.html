@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENZI PERFUMES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: grey;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-decoration: none;
+
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: orange;
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-icons i {
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-icons i:hover {
+            color: orange;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8b4513, #8b4513);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #555;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: #6a11cb;
+            color: white;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0 3rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-content {
+            padding: 1.2rem;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .gallery-desc {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #8b4513;
+            color: #ecf0f1;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="container">
+            <nav class="navbar">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact us.html">Contact uS</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    
+                    
+    </header>
+        <div class="gallery">
+            
+            <div class="gallery-item" data-category="floral">
+                <img src="img/vishal-banik-OhBmysUAjio-unsplash.jpg" alt="GUCCI" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">GUCCI</h3>
+                    <p class="gallery-desc">A delicate blend of jasmine, rose, and lily of the valley.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="woody">
+                <img src="img/virender-singh-e4zT41x1btw-unsplash.jpg" alt="DAVID BECKHAM" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">DAVID BECKHAM</h3>
+              <p class="gallery-desc">Rich notes of sandalwood, cedar, and patchouli.</p>
+                    
+                </div>
+            </div>
+
+            
+
+            <div class="gallery-item" data-category="oriental">
+                <img src="img/tron-le-yrw2nMIuBlY-unsplash.jpg" alt="AMBER NIGHT" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">AMBER NIGHT</h3>
+                    <p class="gallery-desc">Warm amber, vanilla, and exotic spices.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="floral">
+                <img src="img/ryan-lu-i7ZpIeNPK7I-unsplash.jpg" alt="GREY" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">GREY</h3>
+                    <p class="gallery-desc">Fresh floral bouquet with peony and freesia.</p>
+                    
+                </div>
+            </div>
+
+            <!--  -->
+
+            <div class="gallery-item" data-category="woody">
+                <img src="img/robert-arnar-z0xIHTF5HNk-unsplash.jpg" alt="CHANCE" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">CHANCE</h3>
+                    <p class="gallery-desc">Mossy forest floor with hints of vetiver and oak.</p>
+                
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="oriental">
+                <img src="img/rayson-tan-lUAcC4rlMIk-unsplash.jpg" alt="MISS DIOR" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">MISS DIOR</h3>
+                    <p class="gallery-desc">Opulent blend of saffron, cinnamon, and oud.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="floral">
+                <img src="img/raygar-he-1T34Rtm41BU-unsplash.jpg" alt="Rose Garden" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Rose Garden</h3>
+                    <p class="gallery-desc">Luxurious Bulgarian rose with subtle green notes.</p>
+            
+                </div>
+            </div>
+
+            
+            
+
+            <div class="gallery-item" data-category="oriental">
+                <img src="img/pavlo-talpa-SIKp2vihB_s-unsplash.jpg" alt="GIO" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">GIO</h3>
+                    <p class="gallery-desc">Luxurious oud wood with amber and leather notes.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="woody">
+                <img src="img/omar-al-ghosson-TaEAE9cdpVU-unsplash.jpg" alt="Cedar Grove" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Cedar Grove</h3>
+                    <p class="gallery-desc">Pure cedar essence with subtle smoky undertones.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="floral">
+                <img src="img/olena-bohovyk-GOVTETevRm8-unsplash.jpg" alt="BOSS" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">BOSS</h3>
+                    <p class="gallery-desc">Exotic orchid with white musk and delicate florals.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="fresh">
+                <img src="img/nikhil-aqC6LmWleaE-unsplash.jpg" alt="YOU" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">YOU</h3>
+                    <p class="gallery-desc">Ocean mist, sea salt, and driftwood notes.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="oriental">
+                <img src="img/nazanin-enayat-X1ZILmAw3K4-unsplash.jpg" alt="REED " class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">REED</h3>
+                    <p class="gallery-desc">Warm spices, incense, and exotic resins.</p>
+                    
+                </div>
+            </div>
+
+           
+
+
+            <div class="gallery-item" data-category="floral">
+                <img src="img/maxim-lozyanko-3dLrus3c_oA-unsplash (1).jpg" alt="CHLOA" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">CHLOA</h3>
+                    <p class="gallery-desc">Creamy gardenia with tuberose and jasmine.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="fresh">
+                <img src="img/laurissi-CVz2Ove_NuI-unsplash.jpg" alt="DI GIOIA" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">DI GIOIA</h3>
+                    <p class="gallery-desc">Refreshing cucumber with sweet melon and water notes.</p>
+                
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="oriental">
+                <img src="img/laurissi-Bxsl6rpbwfI-unsplash.jpg" alt="SEOU" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">SEOU</h3>
+                    <p class="gallery-desc">Sacred frankincense with golden amber and myrrh.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="woody">
+                <img src="img/laura-chouette-YzaRgVOweMY-unsplash.jpg" alt="DOICE" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">DIOCE</h3>
+                    <p class="gallery-desc">Rare teakwood with vetiver and subtle spice.</p>
+                
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="floral">
+                <img src="img/laura-chouette-mKGHmhQh-K8-unsplash.jpg" alt="WILD STONE" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">WILD STONE</h3>
+                    <p class="gallery-desc">Lush peonies with raspberry and sparkling citrus.</p>
+                    
+                </div>
+            </div>
+
+             <div class="gallery-item" data-category="floral">
+                <img src="img/laura-chouette-mKGHmhQh-K8-unsplash.jpg" alt="CEDAR" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">CEDAR</h3>
+                    <p class="gallery-desc">Lush peonies with raspberry and sparkling citrus.</p>
+                    
+                </div>
+            </div>
+
+             <div class="gallery-item" data-category="floral">
+                <img src="img/lal-mahammad-8Uh0IGs_BSg-unsplash.jpg" alt="JAGUAR" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">JAGUA</h3>
+                    <p class="gallery-desc">Lush peonies with raspberry and sparkling citrus.</p>
+                    
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="fresh">
+                <img src="img/kenny-eliason-wSX-poSLSKE-unsplash.jpg" alt="L'INTERDY" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">L'INTERDY</h3>
+                    <p class="gallery-desc">Crystal clear water with mountain herbs and minerals.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Denzi Perfumes. your scent is our priority.</p>
+    </footer>
+
+</body>
+</html>
