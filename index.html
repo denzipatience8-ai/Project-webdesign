@@ -6,8 +6,6 @@
     <title>DENZI PERFUMES</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-
-    
         :root {
             --primary: #d4af37;
             --secondary: #8b4513;
@@ -18,7 +16,6 @@
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
-
 
         * {
             margin: 0;
@@ -41,7 +38,6 @@
 
         ul {
             list-style: none;
-            text-decoration: none;
         }
 
         button {
@@ -104,7 +100,7 @@
             transform: translateY(-3px);
         }
 
-        
+        /* Loading Screen */
         #loading-screen {
             position: fixed;
             top: 0;
@@ -153,7 +149,7 @@
             color: var(--dark);
         }
 
-        
+        /* Header */
         header {
             background-color: white;
             box-shadow: var(--shadow);
@@ -190,7 +186,6 @@
             letter-spacing: 1px;
             transition: var(--transition);
             position: relative;
-            
         }
 
         .nav-links a:hover {
@@ -229,18 +224,19 @@
 
         .menu-toggle {
             display: none;
-             font-size: 1.5rem;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
-    
+        /* Hero Section */
         .hero {
             height: 90vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("img/vishal-banik-OhBmysUAjio-unsplash.jpg");
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://images.unsplash.com/photo-1547887537-6158d64c35b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
             background-size: cover;
             background-position: center;
             display: flex;
-           align-items: center;
+            align-items: center;
             color: white;
             text-align: center;
         }
@@ -263,7 +259,7 @@
             line-height: 1.8;
         }
 
-    
+        /* Categories */
         .categories {
             padding: 5rem 0;
         }
@@ -275,7 +271,7 @@
         }
 
         .category-card {
-            background: rgb(83, 81, 81);
+            background: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -312,7 +308,7 @@
             margin-bottom: 0.5rem;
         }
 
-        
+        /* Featured Products */
         .featured {
             padding: 5rem 0;
             background-color: var(--accent);
@@ -325,7 +321,7 @@
         }
 
         .product-card {
-            background: rgb(102, 94, 94);
+            background: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -369,10 +365,11 @@
             margin-bottom: 1rem;
         }
 
-
+        /* Newsletter */
         .newsletter {
             padding: 5rem 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/rayson-tan-lUAcC4rlMIk-unsplash.jpg);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url("https://images.unsplash.com/photo-1547887537-6158d64c35b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
             background-size: cover;
             background-position: center;
             color: white;
@@ -417,46 +414,21 @@
             background: var(--secondary);
         }
 
-          footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-
+        /* Footer */
         footer {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #fff;
             padding: 60px 0 0;
             margin-top: 50px;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             padding-bottom: 40px;
         }
-        
+
         .footer-column h3 {
             font-size: 1.4rem;
             margin-bottom: 20px;
@@ -464,7 +436,7 @@
             padding-bottom: 10px;
             color: #d4af37;
         }
-        
+
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -474,19 +446,19 @@
             height: 2px;
             background-color: #d4af37;
         }
-        
+
         .footer-column p {
             margin-bottom: 20px;
             color: #ccc;
             line-height: 1.7;
         }
-        
+
         .social-icons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-icons a {
             display: flex;
             align-items: center;
@@ -498,20 +470,20 @@
             color: #fff;
             transition: all 0.3s ease;
         }
-        
+
         .social-icons a:hover {
             background-color: #d4af37;
             transform: translateY(-3px);
         }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 12px;
         }
-        
+
         .footer-links a {
             color: #ccc;
             text-decoration: none;
@@ -519,33 +491,105 @@
             display: flex;
             align-items: center;
         }
-        
+
         .footer-links a:hover {
             color: #d4af37;
             padding-left: 5px;
         }
-        
+
         .footer-links i {
             margin-right: 10px;
             width: 20px;
             text-align: center;
             color: #d4af37;
         }
-        
+
         .footer-bottom {
             background-color: #111;
             padding: 20px 0;
             text-align: center;
             border-top: 1px solid #333;
         }
-        
+
         .footer-bottom p {
             color: #999;
             font-size: 0.9rem;
         }
-        
-        
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 30px;
+                padding: 15px;
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -564,29 +608,41 @@
                 justify-content: center;
             }
         }
-        
-    
-        .demo-content {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .demo-content h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-        }
-        
-        .demo-content p {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #666;
-        }
-    
-    
-    
 
+        @media (max-width: 576px) {
+            .hero {
+                height: 60vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .loading-logo {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .category-grid, .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -604,14 +660,12 @@
             <nav class="navbar">
                 <a href="index.html" class="logo">DENZI <span>PERFUMES</span></a>
                 
-                <ul  class="nav-links" id="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="contact us.html">Contact uS</a></li>
-                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="about us.html">About Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    
-                    
                 </ul>
                 
                 <div class="nav-icons">
@@ -627,107 +681,106 @@
         </div>
     </header>
 
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>your scent is our priority</h1>
-                    <p>Explore our exclusive collection of luxury perfumes . From timeless classics to modern masterpieces, find the 
-                    perfect fragrance that tells your story.</p>
-                    
-                </div>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Scent Is Our Priority</h1>
+                <p>Explore our exclusive collection of luxury perfumes. From timeless classics to modern masterpieces, find the perfect fragrance that tells your story.</p>
+              
             </div>
-        </section>
+        </div>
+    </section>
 
-        
-        <section class="categories">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Categories</h2>
-                    <p>Explore our wide range of products</p>
+    <section class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Categories</h2>
+                <p>Explore our wide range of products</p>
+            </div>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="img/beautinow-niche-perfume-aEl6VSliO8M-unsplash - Copy.jpg" alt="Women's Perfumes">
+                    </div>
+                    <div class="category-content">
+                        <h3>Women's Perfumes</h3>
+                        <p>Elegant and captivating fragrances</p>
+                    </div>
                 </div>
                 
-                <div class="category-grid">
-                    <div class="category-card">
-                        <div class="category-img">
-                            <img src="img/vishal-banik-OhBmysUAjio-unsplash.jpg" alt="Women's Perfumes">
-                        </div>
-                        <div class="category-content">
-                            <h3>Women's Perfumes</h3>
-                            <p>Elegant and captivating fragrances</p>
-                        </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Men's Perfumes">
                     </div>
-                    
-                    <div class="category-card">
-                        <div class="category-img">
-                            <img src="img/robert-arnar-z0xIHTF5HNk-unsplash.jpg" alt="Men's Perfumes">
-                        </div>
-                        <div class="category-content">
-                            <h3>Men's Perfumes</h3>
-                            <p>Bold and sophisticated scents</p>
-                        </div>
+                    <div class="category-content">
+                        <h3>Men's Perfumes</h3>
+                        <p>Bold and sophisticated scents</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        
-        <section class="featured">
-            <div class="container">
-                <div class="section-title">
-                    <h2>some of our Products</h2>
-                    <p>Our best-selling items</p>
+    <section class="featured">
+        <div class="container">
+            <div class="section-title">
+                <h2>Some Of Our Products</h2>
+                <p>Our best-selling items</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/hyunwon-jang-t8ueo1LnzEU-unsplash.jpg" alt="Chanel No. 5">
+                    </div>
+                    <div class="product-content">
+                        <h3>Skin 99.9%</h3>
+                        <p>Timeless floral fragrance</p>
+                        <div class="price">500,000UGX</div>
+                        
+                    </div>
                 </div>
                 
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="img/alina-rubo-HjO5vw_PP5c-unsplash - Copy.jpg" alt="Chanel No. 5">
-                        </div>
-                        <div class="product-content">
-                            <h3>Skin 99.9%</h3>
-                            <p>Timeless floral fragrance</p>
-                            <div class="price">500,000UGX</div>
-                        </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/dorrell-tibbs-jvgXFjwM0G4-unsplash.jpg" alt="Gioir">
                     </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="img/andrey-ilkevich-7aUb9PSKmc8-unsplash - Copy.jpg" alt="Gioir">
-                        </div>
-                        <div class="product-content">
-                            <h3>Whisky Smoke</h3>
-                            <p>Fresh woody scent </p>
-                            <div class="price">600,000UGX</div>
-                        </div>
+                    <div class="product-content">
+                        <h3>Whisky Smoke</h3>
+                        <p>Fresh woody scent</p>
+                        <div class="price">600,000UGX</div>
+                       
                     </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="img/virender-singh-e4zT41x1btw-unsplash.jpg" alt="channel">
-                        </div>
-                        <div class="product-content">
-                            <h3>Nic Namie</h3>
-                            <p>English pear & freesia</p>
-                            <div class="price">300,000UGX</div>
-                        </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/pesce-huang-mq73cWf9ZAQ-unsplash.jpg" alt="channel">
+                    </div>
+                    <div class="product-content">
+                        <h3>Nic Namie</h3>
+                        <p>English pear & freesia</p>
+                        <div class="price">300,000UGX</div>
+                        
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        
-        <section class="newsletter">
-            <div class="container">
-                <h2>Subscribe to Our Newsletter</h2>
-                <p>Stay updated with our latest collections, exclusive offers, and beauty tips.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </section>
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with our latest collections, exclusive offers, and beauty tips.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
-        <footer>
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -764,7 +817,7 @@
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Town opposite Mapera Building</li>
-        C                <li><i class="fas fa-phone"></i> 0704210674</li>
+                        <li><i class="fas fa-phone"></i> 0704210674</li>
                         <li><i class="fas fa-envelope"></i> denziperfumes@gmail.com</li>
                     </ul>
                 </div>
@@ -781,10 +834,10 @@
             const progressBar = document.getElementById('progress-bar');
             const loadingText = document.getElementById('loading-text');
             const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
             
-            
-            
+            // Loading animation
             let progress = 0;
             const interval = setInterval(function() {
                 progress += Math.random() * 10;
@@ -807,18 +860,20 @@
                 }
             }, 200);
             
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-            
+            // Mobile menu toggle
             if (menuToggle && navLinks) {
                 menuToggle.addEventListener('click', function() {
                     navLinks.classList.toggle('active');
                 });
             }
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.navbar') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
 </html>
-    
-
-       

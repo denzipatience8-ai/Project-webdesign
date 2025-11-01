@@ -3,150 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>DENZI PERFUMES - FAQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        
-       * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
+        :root {
+            --primary: #d4af37;
+            --secondary: #8b4513;
+            --accent: #f8e5c8;
+            --dark: #2c2c2c;
+            --light: #f9f9f9;
+            --text: #333333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: grey;
-        }
-
-        .logo span {
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            text-decoration: none;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            position: relative;
-            text-decoration: none;
-            list-style: none;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            text-decoration: none;
-
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: orange;
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-icons {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-icons i {
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .nav-icons i:hover {
-            color: orange;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-
         
         body {
             line-height: 1.6;
-            color: #777575;
-            background-color: #f9f9f9;
+            color: var(--text);
+            background-color: var(--light);
         }
         
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-    
+        /* Header & Navigation */
         header {
             background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      position: relative;
+      color: rgb(231, 22, 22);
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      bottom: -5px;
+      left: 0;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-icons i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: var(--transition);
+      color: rgb(172, 50, 50);
+    }
+
+    .nav-icons i:hover {
+      color: var(--secondary);
+    }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #8b4513, #8b4513);
-            color: rgb(71, 64, 64);
-            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary), #6a3500);
+            color: white;
+            padding: 5rem 0;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .hero p {
-            font-size: 18px;
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
+            opacity: 0.9;
         }
         
+        /* FAQ Section */
         .faq-section {
-            padding: 60px 0;
+            padding: 5rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3rem;
         }
         
         .section-title h2 {
-            font-size: 36px;
-            color: #2c3e50;
+            font-size: 2.2rem;
+            color: var(--dark);
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 1rem;
         }
         
         .section-title h2::after {
@@ -157,21 +165,21 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: #8b4513;
+            background-color: var(--secondary);
         }
         
         .faq-categories {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 1rem;
+            margin-bottom: 3rem;
         }
         
         .category-btn {
             background: #fff;
             border: 2px solid #e0e0e0;
-            padding: 10px 20px;
+            padding: 0.8rem 1.5rem;
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s;
@@ -179,9 +187,9 @@
         }
         
         .category-btn:hover, .category-btn.active {
-            background: #3498db;
+            background: var(--secondary);
             color: white;
-            border-color: #3498db;
+            border-color: var(--secondary);
         }
         
         .faq-container {
@@ -192,20 +200,19 @@
         .faq-item {
             background: #fff;
             border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
             overflow: hidden;
         }
         
         .faq-question {
-            padding: 20px;
+            padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            font-size: 18px;
-            transform: 2;
+            font-size: 1.1rem;
         }
         
         .faq-question:hover {
@@ -213,21 +220,22 @@
         }
         
         .faq-icon {
-            font-size: 20px;
-            color: #3498db;
+            font-size: 1.3rem;
+            color: var(--secondary);
             transition: transform 0.3s;
         }
         
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease;
             color: #555;
+            line-height: 1.7;
         }
         
         .faq-item.active .faq-answer {
-            padding: 0 20px 20px;
+            padding: 0 1.5rem 1.5rem;
             max-height: 500px;
         }
         
@@ -235,34 +243,36 @@
             transform: rotate(45deg);
         }
         
-        
+        /* Contact CTA */
         .contact-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #8b4513, #8b4513);
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--secondary), #6a3500);
             color: white;
             text-align: center;
         }
         
         .contact-cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
         }
         
         .contact-cta p {
-            font-size: 18px;
+            font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
         }
         
         .btn {
             display: inline-block;
             background-color: white;
-            color: #8b4513;
-            padding: 12px 30px;
+            color: var(--secondary);
+            padding: 0.8rem 2rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            box-shadow: var(--shadow);
         }
         
         .btn:hover {
@@ -271,55 +281,179 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-    
+        /* Footer */
         footer {
-            background-color: #8b4513;
+            background-color: var(--secondary);
             color: white;
-            padding: 50px 0 20px;
+            padding: 3rem 0 1.5rem;
         }
-
+        
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 14px;
+            font-size: 0.9rem;
             color: #bdc3c7;
         }
         
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-cta h2 {
+                font-size: 2rem;
+            }
+        }
         
-        
-        
-        
-        @media (max-width: 576px) {
-            .footer-content {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .nav-links a {
+                color: var(--dark);
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .faq-section {
+                padding: 4rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
             }
             
             .faq-question {
-                font-size: 16px;
-                padding: 15px;
+                padding: 1.2rem;
+                font-size: 1rem;
+            }
+            
+            .contact-cta {
+                padding: 4rem 0;
+            }
+            
+            .contact-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-cta p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .faq-section {
+                padding: 3rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .faq-question {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+            
+            .faq-answer {
+                padding: 0 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 0 1rem 1rem;
+            }
+            
+            .contact-cta {
+                padding: 3rem 0;
+            }
+            
+            .contact-cta h2 {
+                font-size: 1.6rem;
+            }
+            
+            .contact-cta p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    
-     <header>
-       <div class="container">
+    <header>
+        <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">DENZIPERFUMES</a>
-
+                <a href="index.html" class="logo">DENZI <span>PERFUMES</span></a>
                 
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="contact us.html">Contact uS</a></li>
-                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="about us.html">About Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                     <li><a href="gallery.html">Gallery</a></li>
-                    
+                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
                 
-        
+                
                 
                 <div class="menu-toggle" id="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -328,7 +462,6 @@
         </div>
     </header>
 
-
     <section class="hero">
         <div class="container">
             <h1>Frequently Asked Questions</h1>
@@ -336,111 +469,165 @@
         </div>
     </section>
 
-    
-
-    
     <section class="faq-section">
         <div class="container">
             <div class="section-title">
                 <h2>Common Questions</h2>
             </div>
-            <div class="faq-container">
             
-                <div class="faq-item active">
+           
+            
+            <div class="faq-container">
+                <div class="faq-item active" data-category="products">
                     <div class="faq-question">
-                        <span>What services do you offer?</span>
+                        <span>What types of perfumes do you offer?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We deal in men perfumes,women perfumes,Unisex perfumes and also house perfume 
-                            because we care more about your Scent
-                </div>
-                
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How long does a typical project take?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Project timelines vary depending on the scope and complexity. A simple website might take 2-4 weeks, while a complex web application could take 3-6 months. During our initial consultation, we provide a detailed project timeline with specific milestones.</p>
+                        <p>We deal in men's perfumes, women's perfumes, unisex perfumes, and also house perfumes because we care more about your scent. Our collection includes a wide range of fragrances from fresh and floral to woody and oriental notes.</p>
                     </div>
                 </div>
                 
-                
-                <div class="faq-item">
+                <div class="faq-item" data-category="products">
                     <div class="faq-question">
-                        <span>What is your pricing structure?</span>
+                        <span>Are your perfumes long-lasting?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We offer flexible pricing options including fixed-price projects, hourly rates, and monthly retainers. The cost depends on the project requirements, timeline, and resources needed. We provide detailed quotes after understanding your specific needs.</p>
+                        <p>Yes, our perfumes are crafted with high-quality ingredients to ensure long-lasting fragrance. The longevity varies by scent type, with most lasting 6-8 hours on the skin. We recommend applying to pulse points for maximum effect.</p>
                     </div>
                 </div>
                 
-                
-                <div class="faq-item">
+                <div class="faq-item" data-category="shipping">
                     <div class="faq-question">
-                        <span>Do you offer ongoing support?</span>
+                        <span>What are your shipping options and delivery times?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we offer comprehensive support and maintenance packages. These include regular updates, security monitoring, performance optimization, and technical support. Our support plans are tailored to your specific requirements and budget.</p>
+                        <p>We offer standard shipping (3-5 business days) and express shipping (1-2 business days). Orders placed before 2 PM are processed the same day. Delivery times may vary based on your location and current order volume.</p>
                     </div>
                 </div>
                 
-                
-                <div class="faq-item">
+                <div class="faq-item" data-category="shipping">
                     <div class="faq-question">
-                        <span>What technologies do you work with?</span>
+                        <span>Do you offer international shipping?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Our team is proficient in a wide range of technologies including HTML5, CSS3, JavaScript, React, Angular, Node.js, Python, PHP, and various databases. We stay current with industry trends and choose the best technologies for each project's requirements.</p>
+                        <p>Yes, we ship to over 50 countries worldwide. International shipping times vary from 7-14 business days depending on the destination. Additional customs fees may apply for international orders.</p>
                     </div>
                 </div>
                 
-                
-                <div class="faq-item">
+                <div class="faq-item" data-category="returns">
                     <div class="faq-question">
-                        <span>Can you work with our existing team?</span>
+                        <span>What is your return policy?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely! We frequently collaborate with in-house teams, providing specialized expertise where needed. We're experienced in integrating with existing workflows and using project management tools like Jira, Trello, and Asana to ensure smooth collaboration.</p>
+                        <p>We offer a 30-day return policy for unopened and unused products. If you're not satisfied with your purchase, you can return it within 30 days for a full refund or exchange. Perfumes that have been opened can only be returned if defective.</p>
                     </div>
                 </div>
                 
-                
-                <div class="faq-item">
+                <div class="faq-item" data-category="products">
                     <div class="faq-question">
-                        <span>What is your revision policy?</span>
+                        <span>How should I store my perfume?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We include a specific number of revision rounds in our project agreements to ensure you're completely satisfied with the final deliverable. The exact number depends on the project scope. We believe in an iterative process with regular feedback to achieve the best results.</p>
+                        <p>To preserve your perfume's quality, store it in a cool, dark place away from direct sunlight and extreme temperatures. Avoid storing in bathrooms where humidity can affect the fragrance. Keep the bottle tightly closed when not in use.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="products">
+                    <div class="faq-question">
+                        <span>Do you offer sample sizes?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer sample sizes of most of our fragrances. These are perfect for trying before committing to a full bottle. Sample sets are also available, allowing you to experience multiple scents at a discounted price.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
     <section class="contact-cta">
         <div class="container">
             <h2>Still Have Questions?</h2>
             <p>Can't find the answer you're looking for? Please get in touch with our friendly team.</p>
-            <a href="#" class="btn">Contact Us</a>
+            <a href="contact us.html" class="btn">Contact Us</a>
         </div>
     </section>
 
-    
     <footer>
-                
+        <div class="container">
             <div class="copyright">
-                <p>&copy; 2025 DENZI PERFUMES. YOUR SCENT IS OUR priority.</p>
+                <p>&copy; 2025 DENZI PERFUMES. YOUR SCENT IS OUR PRIORITY.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // FAQ accordion functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Category filter functionality
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const category = button.getAttribute('data-category');
+                    
+                    // Show/hide FAQ items based on category
+                    faqItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.navbar') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

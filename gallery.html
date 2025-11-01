@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DENZI PERFUMES</title>
+    <title>DENZI PERFUMES - Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,118 +13,147 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-
+        :root {
+            --primary: #d4af37;
+            --secondary: #8b4513;
+            --accent: #f8e5c8;
+            --dark: #2c2c2c;
+            --light: #f9f9f9;
+            --text: #333333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
         
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: grey;
+        
+        a {
+            text-decoration: none;
+            color: inherit;
         }
-
-        .logo span {
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--secondary), #6a3500);
             color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+        
+       
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            text-decoration: none;
-            list-style: none;
-        }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
 
-        .nav-links a {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            position: relative;
-            text-decoration: none;
-            list-style: none;
-        }
+    .logo span {
+      color: var(--secondary);
+    }
 
-        .nav-links a:hover {
-            color: var(--primary);
-            text-decoration: none;
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-        }
+    .nav-links a {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      position: relative;
+      color: white;
+    }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: orange;
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      bottom: -5px;
+      left: 0;
+      transition: var(--transition);
+    }
 
-        .nav-icons {
-            display: flex;
-            gap: 1.5rem;
-        }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-        .nav-icons i {
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+    .nav-icons {
+      display: flex;
+      gap: 1.5rem;
+    }
 
-        .nav-icons i:hover {
-            color: orange;
-        }
+    .nav-icons i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: var(--transition);
+      color: white;
+    }
 
+    .nav-icons i:hover {
+      color: var(--secondary);
+    }
+        
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
         }
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #8b4513, #8b4513);
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--secondary), #6a3500);
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            
         }
-
-        h1 {
+        
+        .page-header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             letter-spacing: 1px;
         }
-
-        .subtitle {
+        
+        .page-header .subtitle {
             font-size: 1.1rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
+        
+        /* Filter Buttons */
         .filter-buttons {
             display: flex;
             justify-content: center;
@@ -131,7 +161,7 @@
             gap: 0.8rem;
             margin-bottom: 2rem;
         }
-
+        
         .filter-btn {
             background: white;
             border: none;
@@ -140,87 +170,143 @@
             cursor: pointer;
             font-weight: 600;
             color: #555;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
         }
-
+        
         .filter-btn:hover {
-            background: #6a11cb;
+            background: var(--secondary);
             color: white;
         }
-
+        
         .filter-btn.active {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: var(--secondary);
             color: white;
         }
-
+        
+        /* Gallery Grid */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
             padding: 1rem 0 3rem;
         }
-
+        
         .gallery-item {
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         }
-
+        
         .gallery-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-
+        
         .gallery-item:hover .gallery-img {
             transform: scale(1.05);
         }
-
+        
         .gallery-content {
             padding: 1.2rem;
         }
-
+        
         .gallery-title {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: #2c3e50;
+            color: var(--dark);
         }
-
+        
         .gallery-desc {
             color: #7f8c8d;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
-
-
+        
+        /* Footer */
         footer {
             text-align: center;
             padding: 1.5rem;
-            background: #8b4513;
+            background: var(--secondary);
             color: #ecf0f1;
             margin-top: 2rem;
         }
-
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .nav-links a {
+                color: var(--dark);
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
             .gallery {
                 grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             }
-            
-            h1 {
-                font-size: 2rem;
-            }
         }
-
-        @media (max-width: 480px) {
+        
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 2rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header .subtitle {
+                font-size: 1rem;
+            }
+            
             .gallery {
                 grid-template-columns: 1fr;
             }
@@ -233,109 +319,126 @@
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
             }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-     <header>
+    <header>
         <div class="container">
             <nav class="navbar">
+                <a href="index.html" class="logo">DENZI <span>PERFUMES</span></a>
+                
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="contact us.html">Contact uS</a></li>
-                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="about us.html">About Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    
-                    
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
     </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Our Perfume Collection</h1>
+            <p class="subtitle">Discover our exquisite range of luxury fragrances for every occasion and personality</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="floral">Floral</button>
+            <button class="filter-btn" data-filter="woody">Woody</button>
+            <button class="filter-btn" data-filter="oriental">Oriental</button>
+            <button class="filter-btn" data-filter="fresh">Fresh</button>
+        </div>
+
         <div class="gallery">
-            
             <div class="gallery-item" data-category="floral">
-                <img src="img/vishal-banik-OhBmysUAjio-unsplash.jpg" alt="GUCCI" class="gallery-img">
+                <img src="img/alina-rubo-HjO5vw_PP5c-unsplash - Copy.jpg" alt="GUCCI" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">GUCCI</h3>
                     <p class="gallery-desc">A delicate blend of jasmine, rose, and lily of the valley.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="woody">
-                <img src="img/virender-singh-e4zT41x1btw-unsplash.jpg" alt="DAVID BECKHAM" class="gallery-img">
+                <img src="img/andrey-ilkevich-7aUb9PSKmc8-unsplash - Copy.jpg" alt="DAVID BECKHAM" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">DAVID BECKHAM</h3>
-              <p class="gallery-desc">Rich notes of sandalwood, cedar, and patchouli.</p>
-                    
+                    <p class="gallery-desc">Rich notes of sandalwood, cedar, and patchouli.</p>
                 </div>
             </div>
 
-            
-
             <div class="gallery-item" data-category="oriental">
-                <img src="img/tron-le-yrw2nMIuBlY-unsplash.jpg" alt="AMBER NIGHT" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="AMBER NIGHT" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">AMBER NIGHT</h3>
                     <p class="gallery-desc">Warm amber, vanilla, and exotic spices.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="floral">
-                <img src="img/ryan-lu-i7ZpIeNPK7I-unsplash.jpg" alt="GREY" class="gallery-img">
+                <img src="img/raygar-he-1T34Rtm41BU-unsplash.jpg" alt="GREY" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">GREY</h3>
                     <p class="gallery-desc">Fresh floral bouquet with peony and freesia.</p>
-                    
                 </div>
             </div>
 
-            <!--  -->
-
             <div class="gallery-item" data-category="woody">
-                <img src="img/robert-arnar-z0xIHTF5HNk-unsplash.jpg" alt="CHANCE" class="gallery-img">
+                <img src="img/tron-le-yrw2nMIuBlY-unsplash.jpg" alt="CHANCE" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">CHANCE</h3>
                     <p class="gallery-desc">Mossy forest floor with hints of vetiver and oak.</p>
-                
                 </div>
             </div>
 
             <div class="gallery-item" data-category="oriental">
-                <img src="img/rayson-tan-lUAcC4rlMIk-unsplash.jpg" alt="MISS DIOR" class="gallery-img">
+                <img src="img/nikhil-aqC6LmWleaE-unsplash.jpg" alt="MISS DIOR" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">MISS DIOR</h3>
                     <p class="gallery-desc">Opulent blend of saffron, cinnamon, and oud.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="floral">
-                <img src="img/raygar-he-1T34Rtm41BU-unsplash.jpg" alt="Rose Garden" class="gallery-img">
+                <img src="img/pavlo-talpa-x6uDzV1AHRI-unsplash.jpg" alt="Rose Garden" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">Rose Garden</h3>
                     <p class="gallery-desc">Luxurious Bulgarian rose with subtle green notes.</p>
-            
                 </div>
             </div>
 
-            
-            
-
             <div class="gallery-item" data-category="oriental">
-                <img src="img/pavlo-talpa-SIKp2vihB_s-unsplash.jpg" alt="GIO" class="gallery-img">
+                <img src="img/pavlo-talpa-_JGBLa2gHIg-unsplash.jpg" alt="GIO" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">GIO</h3>
                     <p class="gallery-desc">Luxurious oud wood with amber and leather notes.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="woody">
-                <img src="img/omar-al-ghosson-TaEAE9cdpVU-unsplash.jpg" alt="Cedar Grove" class="gallery-img">
+                <img src="img/ryan-lu-i7ZpIeNPK7I-unsplash.jpg" alt="Cedar Grove" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">Cedar Grove</h3>
                     <p class="gallery-desc">Pure cedar essence with subtle smoky undertones.</p>
-                    
                 </div>
             </div>
 
@@ -344,108 +447,137 @@
                 <div class="gallery-content">
                     <h3 class="gallery-title">BOSS</h3>
                     <p class="gallery-desc">Exotic orchid with white musk and delicate florals.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="fresh">
-                <img src="img/nikhil-aqC6LmWleaE-unsplash.jpg" alt="YOU" class="gallery-img">
+                <img src="img/nazanin-enayat-X1ZILmAw3K4-unsplash.jpg" alt="YOU" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">YOU</h3>
                     <p class="gallery-desc">Ocean mist, sea salt, and driftwood notes.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="oriental">
-                <img src="img/nazanin-enayat-X1ZILmAw3K4-unsplash.jpg" alt="REED " class="gallery-img">
+                <img src="img/nazanin-enayat-X1ZILmAw3K4-unsplash.jpg" alt="REED" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">REED</h3>
                     <p class="gallery-desc">Warm spices, incense, and exotic resins.</p>
-                    
                 </div>
             </div>
 
-           
-
-
             <div class="gallery-item" data-category="floral">
-                <img src="img/maxim-lozyanko-3dLrus3c_oA-unsplash (1).jpg" alt="CHLOA" class="gallery-img">
+                <img src="img/pesce-huang-mq73cWf9ZAQ-unsplash.jpg" alt="CHLOA" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">CHLOA</h3>
                     <p class="gallery-desc">Creamy gardenia with tuberose and jasmine.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="fresh">
-                <img src="img/laurissi-CVz2Ove_NuI-unsplash.jpg" alt="DI GIOIA" class="gallery-img">
+                <img src="img/raygar-he-1T34Rtm41BU-unsplash.jpg" alt="DI GIOIA" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">DI GIOIA</h3>
                     <p class="gallery-desc">Refreshing cucumber with sweet melon and water notes.</p>
-                
                 </div>
             </div>
 
             <div class="gallery-item" data-category="oriental">
-                <img src="img/laurissi-Bxsl6rpbwfI-unsplash.jpg" alt="SEOU" class="gallery-img">
+                <img src="img/pavlo-talpa-x6uDzV1AHRI-unsplash.jpg" alt="SEOU" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">SEOU</h3>
                     <p class="gallery-desc">Sacred frankincense with golden amber and myrrh.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="woody">
-                <img src="img/laura-chouette-YzaRgVOweMY-unsplash.jpg" alt="DOICE" class="gallery-img">
+                <img src="img/beautinow-niche-perfume-aEl6VSliO8M-unsplash - Copy.jpg" alt="DIOCE" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">DIOCE</h3>
                     <p class="gallery-desc">Rare teakwood with vetiver and subtle spice.</p>
-                
                 </div>
             </div>
 
             <div class="gallery-item" data-category="floral">
-                <img src="img/laura-chouette-mKGHmhQh-K8-unsplash.jpg" alt="WILD STONE" class="gallery-img">
+                <img src="img/andrey-ilkevich-7aUb9PSKmc8-unsplash - Copy.jpg" alt="WILD STONE" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">WILD STONE</h3>
                     <p class="gallery-desc">Lush peonies with raspberry and sparkling citrus.</p>
-                    
                 </div>
             </div>
 
-             <div class="gallery-item" data-category="floral">
-                <img src="img/laura-chouette-mKGHmhQh-K8-unsplash.jpg" alt="CEDAR" class="gallery-img">
+            <div class="gallery-item" data-category="floral">
+                <img src="img/dario-gomes-MoPGCgHPS6I-unsplash.jpg" alt="CEDAR" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">CEDAR</h3>
                     <p class="gallery-desc">Lush peonies with raspberry and sparkling citrus.</p>
-                    
                 </div>
             </div>
 
-             <div class="gallery-item" data-category="floral">
-                <img src="img/lal-mahammad-8Uh0IGs_BSg-unsplash.jpg" alt="JAGUAR" class="gallery-img">
+            <div class="gallery-item" data-category="floral">
+                <img src="img/delfina-iacub-nrkgRRskOBo-unsplash.jpg" alt="JAGUA" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">JAGUA</h3>
                     <p class="gallery-desc">Lush peonies with raspberry and sparkling citrus.</p>
-                    
                 </div>
             </div>
 
             <div class="gallery-item" data-category="fresh">
-                <img src="img/kenny-eliason-wSX-poSLSKE-unsplash.jpg" alt="L'INTERDY" class="gallery-img">
+                <img src="img/hyunwon-jang-t8ueo1LnzEU-unsplash.jpg" alt="L'INTERDY" class="gallery-img">
                 <div class="gallery-content">
                     <h3 class="gallery-title">L'INTERDY</h3>
                     <p class="gallery-desc">Crystal clear water with mountain herbs and minerals.</p>
-                    
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Denzi Perfumes. your scent is our priority.</p>
+        <p>&copy; 2025 Denzi Perfumes. Your scent is our priority.</p>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.navbar') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
